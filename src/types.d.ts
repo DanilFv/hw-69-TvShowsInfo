@@ -1,12 +1,25 @@
 export interface ITvShow {
+    id: number;
     name: string;
     genres: string[];
-    id: number
-    country: string;
+    network: string;
     image: string;
 }
 
-interface ApiSearchResponse {
-  score: number;
-  show: ITvShow;
+export interface ApiSearchResponse {
+    score: number;
+    show: {
+        id: number;
+        name: string;
+        genres: string[];
+        network?: {
+            country?: {
+                name: string;
+            };
+        } | null;
+        image?: {
+            medium: string;
+            original: string;
+        } | null;
+    };
 }

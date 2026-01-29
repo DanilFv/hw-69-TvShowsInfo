@@ -27,7 +27,15 @@ const showSlice = createSlice({
         });
          builder.addCase(fetchShows.fulfilled, (state, action) => {
             state.loading = false;
-            state.shows = action.payload.map((item) => item.show);
+            state.shows = action.payload.map((item): ITvShow => {
+                return {
+                    id: item.show.id,
+                    name: item.show.name,
+                    genres: item.show.genres,
+                    network: item.show.network?.country?.name || 'Unknown',
+                    image: item.show.image?.medium || 'https://integra-system.ru/images/new/001noimage.jpg'
+                }
+            });
         });
           builder.addCase(fetchShows.rejected, (state) => {
             state.loading = false;
@@ -41,6 +49,7 @@ export const fetchShows = createAsyncThunk<ApiSearchResponse[], string>(
         return response.data;
     }
 );
+
 
 export const selectShow = (state: RootState) => state.show.shows;
 
