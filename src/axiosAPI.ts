@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosAPI = axios.create({
-    baseURL: 'https://api.tvmaze.com/search/shows?q=',
+    baseURL: 'https://api.tvmaze.com/',
 });
 
 export default axiosAPI;

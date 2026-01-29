@@ -33,7 +33,7 @@ const SearchBlockCard: React.FC<Props> = ({shows, value, onChange}) => {
                         }}
                     >
                         {shows.map((show) => (
-                            <SearchBlockCardItem key={show.id} show={show} onClick={() => onChange('')} />
+                            <SearchBlockCardItem key={show.id} show={show} />
                         ))}
                     </div>
                 )}

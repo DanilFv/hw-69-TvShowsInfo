@@ -4,6 +4,7 @@ export interface ITvShow {
     genres: string[];
     network: string;
     image: string;
+    summary?: string;
 }
 
 export interface ApiSearchResponse {

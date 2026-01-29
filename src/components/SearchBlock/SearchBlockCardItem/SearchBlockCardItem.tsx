@@ -4,10 +4,9 @@ import * as React from 'react';
 
 interface Props {
     show: ITvShow;
-    onClick: () => void;
 }
 
-const SearchBlockCardItem: React.FC<Props> = ({show, onClick}) => {
+const SearchBlockCardItem: React.FC<Props> = ({show}) => {
     return (
         <NavLink
             to={`/shows/${show.id}`}
@@ -18,7 +17,6 @@ const SearchBlockCardItem: React.FC<Props> = ({show, onClick}) => {
                 color: 'black',
                 borderBottom: '1px solid #eee'
             }}
-            onClick={onClick}
         >
             {show.name}
         </NavLink>
